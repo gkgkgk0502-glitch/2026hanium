@@ -162,14 +162,18 @@
       <span class="chip">LECTURE</span>
     </div>
     <div class="player-card">
-      <div class="player-screen" id="playerScreen" onclick="playVideo()">
+      <div class="player-screen" id="playerScreen">
         <div class="player-thumb" id="playerThumb">
           <div class="thumb-content">
-            <div class="thumb-icon">
+            <div class="thumb-icon" onclick="playEmbed()">
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
             <div class="thumb-title" id="thumbTitle">고객 문제 발견과 창업 기회 발굴</div>
-            <div class="thumb-meta" id="thumbMeta">1강 · 37분 · 클릭하여 재생</div>
+            <div class="thumb-meta" id="thumbMeta">1강 · 37분</div>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:1rem;">
+              <button onclick="playEmbed()" style="background:rgba(0,194,168,0.9);color:white;border:none;padding:10px 20px;border-radius:8px;font-family:Nanum Gothic,sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;">▶ 여기서 재생</button>
+              <button onclick="openNewTab()" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);padding:10px 20px;border-radius:8px;font-family:Nanum Gothic,sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;">🔗 새 탭에서 열기</button>
+            </div>
           </div>
         </div>
         <iframe id="videoIframe" class="video-iframe" allow="autoplay" allowfullscreen></iframe>
@@ -345,7 +349,7 @@ function selectLecture(i) {
   renderPlaylist();
 }
 
-function playVideo() {
+function playEmbed() {
   const lec = lectures[current];
   document.getElementById('playerThumb').classList.add('hidden');
   const iframe = document.getElementById('videoIframe');
@@ -353,6 +357,15 @@ function playVideo() {
   iframe.classList.add('visible');
   addView(lec.id);
 }
+
+function openNewTab() {
+  const lec = lectures[current];
+  addView(lec.id);
+  window.open(`https://drive.google.com/file/d/${lec.driveId}/view`, '_blank');
+}
+
+// 하위 호환
+function playVideo() { playEmbed(); }
 
 renderPlaylist();
 </script>
