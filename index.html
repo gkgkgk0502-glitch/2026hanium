@@ -21,7 +21,6 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Nanum Gothic', sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
 
-  /* HEADER */
   header { background: var(--primary); padding: 0 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
   .logo-area { display: flex; flex-direction: column; }
@@ -32,7 +31,6 @@
   nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; transition: all 0.2s; cursor: pointer; }
   nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-  /* HERO */
   .hero { background: linear-gradient(135deg, var(--primary) 0%, #0D3B6E 60%, #0A5580 100%); padding: 5rem 2rem 4rem; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,194,168,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(255,107,53,0.08) 0%, transparent 60%); }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,194,168,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,168,0.06) 1px, transparent 1px); background-size: 60px 60px; }
@@ -41,7 +39,7 @@
   .hero-tag::before { content: '●'; font-size: 0.5rem; }
   .hero h1 { font-family: 'Nanum Gothic', sans-serif; font-weight: 400; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--white); line-height: 1.25; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
   .hero h1 span { color: var(--accent); }
-  .hero-desc { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 560px; margin-bottom: 2rem; }
+  .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.9; max-width: 560px; margin-bottom: 2rem; }
   .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
   .stat { display: flex; flex-direction: column; }
   .stat-num { font-family: 'Black Han Sans', sans-serif; font-size: 1.8rem; color: var(--gold); line-height: 1; }
@@ -49,15 +47,11 @@
   .hero-org { margin-top: 2.5rem; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.2rem; }
   .hero-org strong { color: rgba(255,255,255,0.7); }
 
-  /* MAIN LAYOUT */
   .main-wrap { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start; }
-
-  /* SECTION TITLE */
   .section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; }
   .section-title h2 { font-family: 'Black Han Sans', sans-serif; font-size: 1.3rem; color: var(--primary); letter-spacing: -0.02em; }
   .section-title .chip { background: var(--primary); color: var(--white); font-size: 0.65rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.05em; }
 
-  /* VIDEO PLAYER */
   .player-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin-bottom: 2rem; border: 1px solid var(--border); }
   .player-screen { position: relative; background: #0A0E1A; padding-top: 56.25%; cursor: pointer; overflow: hidden; }
   .player-thumb { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0A2540 0%, #0D3B6E 100%); transition: opacity 0.3s; }
@@ -77,7 +71,6 @@
   .player-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { background: rgba(0,194,168,0.1); color: #007A6A; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(0,194,168,0.2); }
 
-  /* PLAYLIST */
   .playlist { display: flex; flex-direction: column; gap: 10px; }
   .playlist-item { display: flex; gap: 12px; align-items: center; padding: 12px 14px; background: var(--card-bg); border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; }
   .playlist-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transition: transform 0.2s; border-radius: 0 2px 2px 0; }
@@ -97,7 +90,6 @@
   .playlist-item.active .status-dot { display: none; }
   .playlist-item.active .status-play { display: block; }
 
-  /* SIDEBAR */
   .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
   .sidebar-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.4rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
   .sidebar-card h3 { font-family: 'Black Han Sans', sans-serif; font-size: 0.95rem; color: var(--primary); margin-bottom: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
@@ -108,14 +100,10 @@
   .info-label { font-size: 0.68rem; color: var(--muted); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1px; }
   .info-value { font-size: 0.82rem; color: var(--text); font-weight: 500; }
 
-  /* FOOTER */
   footer { background: var(--primary); color: rgba(255,255,255,0.45); padding: 2rem; text-align: center; font-size: 0.75rem; line-height: 1.8; border-top: 1px solid rgba(255,255,255,0.05); }
   footer strong { color: rgba(255,255,255,0.7); }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) { .main-wrap { grid-template-columns: 1fr; } nav { display: none; } }
-
-  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .hero-inner > * { animation: fadeUp 0.6s ease both; }
   .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
@@ -127,7 +115,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="logo-area">
@@ -142,13 +129,12 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div class="hero-tag">창업입문교육 온라인 강의</div>
     <h1>꿈을 현실로,<br><span>창업의 첫 걸음</span>을<br>함께 시작합니다</h1>
-    <p class="hero-desc">2026 한이음 드림업 창업 멘토링 프로그램에 오신 것을 환영합니다. 창업을 희망하는 여러분들이 프로그램 신청서 작성에 도움을 주기 위한 아래 5개 강의를 준비하였으니 수강 후 창업 멘토링 프로그램 신청 작성 부탁드립니다.</p>
+    <p class="hero-desc">2026 한이음 드림업 창업 멘토링 프로그램에 오신 것을 환영합니다.<br>창업을 희망하는 여러분들이 프로그램 신청서 작성에 도움을 주기 위한<br>아래 5개 강의를 준비하였으니 수강 후 창업 멘토링 프로그램 신청 작성 부탁드립니다.</p>
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-num">5</span>
@@ -168,16 +154,12 @@
   </div>
 </section>
 
-<!-- MAIN -->
 <div class="main-wrap" id="lectureSection">
-  <!-- LEFT: PLAYER + PLAYLIST -->
   <div>
     <div class="section-title">
       <h2>강의 수강</h2>
       <span class="chip">LECTURE</span>
     </div>
-
-    <!-- Player -->
     <div class="player-card">
       <div class="player-screen" id="playerScreen" onclick="playVideo()">
         <div class="player-thumb" id="playerThumb">
@@ -189,9 +171,7 @@
             <div class="thumb-meta" id="thumbMeta">1강 · 37분 · 클릭하여 재생</div>
           </div>
         </div>
-        <iframe id="videoIframe" class="video-iframe"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen></iframe>
+        <iframe id="videoIframe" class="video-iframe" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="player-info">
         <div class="player-episode" id="playerEpisode">EPISODE 01</div>
@@ -204,8 +184,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Playlist -->
     <div class="section-title">
       <h2>강의 목록</h2>
       <span class="chip">5 EPISODES</span>
@@ -213,7 +191,6 @@
     <div class="playlist" id="playlist"></div>
   </div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-card">
       <h3>📋 교육 정보</h3>
@@ -251,7 +228,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <strong>2026 한이음 드림업 창업 멘토링 | 창업 입문교육</strong><br>
   주관 : 한국정보산업연합회 · Korea Federation of Information Industries<br>
@@ -259,8 +235,14 @@
 </footer>
 
 <script>
-// ── 강의 데이터: vimeoId를 실제 Vimeo 영상 ID로 교체하세요 ──
-// Vimeo URL 예시: https://vimeo.com/123456789  →  vimeoId: "123456789"
+// ────────────────────────────────────────────────
+// ★ VIDEOPACK(위캔디오) 영상 Key 입력 방법 ★
+//
+// 1. videopack.wecandeo.com 로그인
+// 2. 업로드된 영상 → [배포소스] 탭 클릭
+// 3. iframe src 안의 key=XXXX 값을 복사
+// 4. 아래 videoKey: "..." 부분에 붙여넣기
+// ────────────────────────────────────────────────
 const lectures = [
   {
     id: 1,
@@ -268,7 +250,7 @@ const lectures = [
     desc: "고객이 실제로 겪고 있는 불편함과 문제를 발견하고, 그 안에서 창업 기회를 발굴하는 방법을 배웁니다. 문제 정의부터 기회 탐색까지의 과정을 사례 중심으로 학습합니다.",
     duration: "37분",
     tags: ["고객 문제", "기회 발굴", "문제 정의"],
-    vimeoId: "76979871"  // ← Vimeo 영상 ID 입력 (예: https://vimeo.com/76979871)
+    videoKey: play.wecandeo.com/video/v/?key=BOKNS9AQWrHlii9BTiicPOip1ish1SisbDo46zf2u71LPKDEHBqOWipCisZ9wieie
   },
   {
     id: 2,
@@ -276,7 +258,7 @@ const lectures = [
     desc: "린 스타트업 방법론을 기반으로 창업 아이템을 빠르게 개발하고 검증하는 과정을 학습합니다. MVP 설계와 반복적인 개선을 통해 시장에 맞는 아이템을 도출합니다.",
     duration: "42분",
     tags: ["린 스타트업", "MVP", "아이템 개발"],
-    vimeoId: "76979871"  // ← Vimeo 영상 ID 입력
+    videoKey: play.wecandeo.com/video/v/?key=BOKNS9AQWrHlii9BTiicPOip1ish1SisbDo46zf2u71LPKDEHBqOWipCisZ9wieie
   },
   {
     id: 3,
@@ -284,7 +266,7 @@ const lectures = [
     desc: "아이디어와 제품이 실제 고객에게 통하는지 검증하는 방법론을 학습합니다. 고객 인터뷰, 설문, 프로토타입 테스트 등 실전 검증 기법을 통해 시장 적합성을 확인합니다.",
     duration: "38분",
     tags: ["고객 검증", "시장 검증", "인터뷰"],
-    vimeoId: "76979871"  // ← Vimeo 영상 ID 입력
+    videoKey: play.wecandeo.com/video/v/?key=BOKNS9AQWrHlii9BTiicPOip1ish1SisbDo46zf2u71LPKDEHBqOWipCisZ9wieie
   },
   {
     id: 4,
@@ -292,7 +274,7 @@ const lectures = [
     desc: "지속 가능한 창업을 위한 수익구조 설계와 비즈니스 모델 수립 방법을 학습합니다. 비즈니스 모델 캔버스를 활용해 수익 창출 구조를 구체적으로 설계합니다.",
     duration: "35분",
     tags: ["수익구조", "비즈니스 모델", "BMC"],
-    vimeoId: "76979871"  // ← Vimeo 영상 ID 입력
+    videoKey: play.wecandeo.com/video/v/?key=BOKNS9AQWrHlii9BTiicPOip1ish1SisbDo46zf2u71LPKDEHBqOWipCisZ9wieie
   },
   {
     id: 5,
@@ -300,9 +282,19 @@ const lectures = [
     desc: "정부 및 기관의 창업지원사업에 효과적으로 참여하는 방법과 지원 과정에서 갖춰야 할 매너를 학습합니다. 신청서 작성 요령, 발표 준비, 심사 대응 등 실전 노하우를 익힙니다.",
     duration: "38분",
     tags: ["창업지원사업", "신청서 작성", "IR 매너"],
-    vimeoId: "76979871"  // ← Vimeo 영상 ID 입력
+    videoKey: play.wecandeo.com/video/v/?key=BOKNS9AQWrHlii9BTiicPOip1ish1SisbDo46zf2u71LPKDEHBqOWipCisZ9wieie
   }
 ];
+
+// 재생 횟수 저장 (localStorage 활용)
+function getViews() {
+  try { return JSON.parse(localStorage.getItem('lectureViews') || '{}'); } catch(e) { return {}; }
+}
+function addView(id) {
+  const v = getViews();
+  v[id] = (v[id] || 0) + 1;
+  localStorage.setItem('lectureViews', JSON.stringify(v));
+}
 
 let current = 0;
 
@@ -310,7 +302,6 @@ function scrollToTop(e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 function scrollToLecture(e) {
   e.preventDefault();
   document.getElementById('lectureSection').scrollIntoView({ behavior: 'smooth' });
@@ -341,18 +332,15 @@ function renderPlaylist() {
 function selectLecture(i) {
   current = i;
   const lec = lectures[i];
-
   document.getElementById('thumbTitle').textContent = lec.title;
   document.getElementById('thumbMeta').textContent = `강의 ${i + 1} · ${lec.duration} · 클릭하여 재생`;
   document.getElementById('playerThumb').classList.remove('hidden');
   document.getElementById('videoIframe').classList.remove('visible');
   document.getElementById('videoIframe').src = '';
-
   document.getElementById('playerEpisode').textContent = `EPISODE ${String(i + 1).padStart(2, '0')}`;
   document.getElementById('playerTitle').textContent = lec.title;
   document.getElementById('playerDesc').textContent = lec.desc;
   document.getElementById('playerTags').innerHTML = lec.tags.map(t => `<span class="tag">${t}</span>`).join('');
-
   renderPlaylist();
 }
 
@@ -360,11 +348,13 @@ function playVideo() {
   const lec = lectures[current];
   document.getElementById('playerThumb').classList.add('hidden');
   const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://player.vimeo.com/video/${lec.vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
+  // VIDEOPACK(위캔디오) 임베드 URL
+  iframe.src = `https://play.wecandeo.com/video/v/?key=${lec.videoKey}&autoplay=true`;
   iframe.classList.add('visible');
+  // 조회수 카운트
+  addView(lec.id);
 }
 
-// Init
 renderPlaylist();
 </script>
 </body>
