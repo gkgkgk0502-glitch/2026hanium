@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 한이음 드림업 창업 멘토링 | 창업 입문교육</title>
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
@@ -171,7 +172,7 @@
             <div class="thumb-meta" id="thumbMeta">1강 · 37분 · 클릭하여 재생</div>
           </div>
         </div>
-        <iframe id="videoIframe" class="video-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
+        <iframe id="videoIframe" class="video-iframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="player-info">
         <div class="player-episode" id="playerEpisode">EPISODE 01</div>
@@ -348,7 +349,7 @@ function playVideo() {
   const lec = lectures[current];
   document.getElementById('playerThumb').classList.add('hidden');
   const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://www.youtube.com/embed/${lec.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${lec.youtubeId}?autoplay=1&rel=0&modestbranding=1`;
   iframe.classList.add('visible');
   // 조회수 카운트
   addView(lec.id);
