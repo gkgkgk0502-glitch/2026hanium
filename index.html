@@ -144,7 +144,7 @@
   <div class="hero-inner">
     <div class="hero-tag">창업입문교육 온라인 강의</div>
     <h1>꿈을 현실로,<br><span>창업의 첫 걸음</span>을<br>함께 시작합니다</h1>
-    <p class="hero-desc">2026 한이음 드림업 창업 멘토링 프로그램에 오신 것을 환영합니다.<br>창업을 희망하는 여러분들이 프로그램 신청서 작성에 도움을 주기 위한<br>아래 5개 강의를 준비하였으니 수강 후 창업 멘토링 프로그램 신청 작성 부탁드립니다.</p>
+    <p class="hero-desc">2026 한이음 드림업 창업 멘토링 프로그램에 오신 것을 환영합니다.<br>창업을 희망하는 여러분들에게 창업 멘토링 프로그램 신청서 작성에<br>도움을 드리기 위한 5개 특강을 준비하였습니다.<br>5개 모두 수강 후 신청서 작성 부탁드립니다!</p>
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">5</span><span class="stat-label">강의 콘텐츠</span></div>
       <div class="stat"><span class="stat-num">각 0.5H</span><span class="stat-label">개별 학습시간</span></div>
@@ -236,7 +236,7 @@ const lectures = [
     desc: "고객이 실제로 겪고 있는 불편함과 문제를 발견하고, 그 안에서 창업 기회를 발굴하는 방법을 배웁니다. 문제 정의부터 기회 탐색까지의 과정을 사례 중심으로 학습합니다.",
     duration: "37분",
     tags: ["고객 문제", "기회 발굴", "문제 정의"],
-    driveId: "1pUA1iZuKH4aj3PcoUucpltzaJljRupQS"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDHqs1xd9KvOFgieie"
   },
   {
     id: 2,
@@ -244,7 +244,7 @@ const lectures = [
     desc: "린 스타트업 방법론을 기반으로 창업 아이템을 빠르게 개발하고 검증하는 과정을 학습합니다. MVP 설계와 반복적인 개선을 통해 시장에 맞는 아이템을 도출합니다.",
     duration: "42분",
     tags: ["린 스타트업", "MVP", "아이템 개발"],
-    driveId: "1pUA1iZuKH4aj3PcoUucpltzaJljRupQS"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDGX4dUfODnJnAieie"
   },
   {
     id: 3,
@@ -252,7 +252,7 @@ const lectures = [
     desc: "아이디어와 제품이 실제 고객에게 통하는지 검증하는 방법론을 학습합니다. 고객 인터뷰, 설문, 프로토타입 테스트 등 실전 검증 기법을 통해 시장 적합성을 확인합니다.",
     duration: "38분",
     tags: ["고객 검증", "시장 검증", "인터뷰"],
-    driveId: "1pUA1iZuKH4aj3PcoUucpltzaJljRupQS"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEvK6nIZPY3dQieie"
   },
   {
     id: 4,
@@ -260,7 +260,7 @@ const lectures = [
     desc: "지속 가능한 창업을 위한 수익구조 설계와 비즈니스 모델 수립 방법을 학습합니다. 비즈니스 모델 캔버스를 활용해 수익 창출 구조를 구체적으로 설계합니다.",
     duration: "35분",
     tags: ["수익구조", "비즈니스 모델", "BMC"],
-    driveId: "1pUA1iZuKH4aj3PcoUucpltzaJljRupQS"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEGyCtdDv9Z2Aieie"
   },
   {
     id: 5,
@@ -268,7 +268,7 @@ const lectures = [
     desc: "정부 및 기관의 창업지원사업에 효과적으로 참여하는 방법과 지원 과정에서 갖춰야 할 매너를 학습합니다. 신청서 작성 요령, 발표 준비, 심사 대응 등 실전 노하우를 익힙니다.",
     duration: "38분",
     tags: ["창업지원사업", "신청서 작성", "IR 매너"],
-    driveId: "1pUA1iZuKH4aj3PcoUucpltzaJljRupQS"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDFFkBG7PJ1UVgieie"
   }
 ];
 
@@ -287,7 +287,7 @@ function playEmbed() {
   const lec = lectures[current];
   addView(lec.id);
   const iframe = document.getElementById('videoIframe');
-  iframe.src = 'https://drive.google.com/file/d/' + lec.driveId + '/preview';
+  iframe.src = lec.videoUrl;
   iframe.className = 'video-iframe visible';
   document.getElementById('playerThumb').className = 'player-thumb hidden';
 }
@@ -295,7 +295,7 @@ function playEmbed() {
 function openNewTab() {
   const lec = lectures[current];
   addView(lec.id);
-  window.open('https://drive.google.com/file/d/' + lec.driveId + '/view', '_blank');
+  window.open(lec.videoUrl, '_blank');
 }
 
 function selectLecture(i) {
