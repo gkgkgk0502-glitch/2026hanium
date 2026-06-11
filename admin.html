@@ -328,16 +328,9 @@ function renderPdfGrid() {
   }).join('');
 }
 
-function toDownloadUrl(url) {
-  const match = url.match(/\/file\/d\/([^/]+)/);
-  if (match) return 'https://drive.google.com/uc?export=download&id=' + match[1];
-  return url;
-}
-
 function savePdf(id) {
-  const raw = document.getElementById('pdf-input-'+id).value.trim();
-  if (!raw) { showToast('⚠️ 링크를 입력해주세요.'); return; }
-  const url = toDownloadUrl(raw);
+  const url = document.getElementById('pdf-input-'+id).value.trim();
+  if (!url) { showToast('⚠️ 링크를 입력해주세요.'); return; }
   const pdfs = getPdfs();
   pdfs[id] = url;
   savePdfs(pdfs);
