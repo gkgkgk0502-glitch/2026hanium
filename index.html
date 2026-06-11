@@ -6,6 +6,8 @@
 <title>2026 한이음 드림업 창업 멘토링 | 창업 입문교육</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+<style>@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-style:normal;}@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:700;font-style:normal;}</style>
 <style>
   :root {
     --primary: #0A2540;
@@ -24,7 +26,7 @@
   header { background: var(--primary); padding: 0 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
   .logo-area { display: flex; flex-direction: column; }
-  .logo-main { font-family: 'Black Han Sans', sans-serif; font-size: 1.15rem; color: var(--accent); letter-spacing: -0.02em; line-height: 1.2; }
+  .logo-main { font-family: 'GmarketSans', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--accent); letter-spacing: -0.02em; line-height: 1.2; }
   .logo-sub { font-size: 0.65rem; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; margin-top: 2px; }
   .header-badge { background: linear-gradient(135deg, var(--accent), #00A08A); color: white; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
   nav { display: flex; gap: 1.5rem; }
@@ -43,14 +45,14 @@
   @media (max-width: 600px) { .hero-desc { font-size: 0.82rem; line-height: 1.7; } }
   .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
   .stat { display: flex; flex-direction: column; }
-  .stat-num { font-family: 'Black Han Sans', sans-serif; font-size: 1.8rem; color: var(--gold); line-height: 1; }
+  .stat-num { font-family: 'GmarketSans', sans-serif; font-weight: 700; font-size: 1.8rem; color: var(--gold); line-height: 1; }
   .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); margin-top: 3px; }
   .hero-org { margin-top: 2.5rem; display: flex; align-items: center; gap: 10px; font-size: 0.78rem; color: rgba(255,255,255,0.45); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.2rem; }
   .hero-org strong { color: rgba(255,255,255,0.7); }
 
   .main-wrap { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 4rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start; }
   .section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; }
-  .section-title h2 { font-family: 'Black Han Sans', sans-serif; font-size: 1.3rem; color: var(--primary); }
+  .section-title h2 { font-family: 'GmarketSans', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--primary); }
   .section-title .chip { background: var(--primary); color: var(--white); font-size: 0.65rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
 
   /* 플레이어 */
@@ -64,7 +66,7 @@
   .thumb-icon { width: 72px; height: 72px; background: rgba(0,194,168,0.2); border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; cursor: pointer; transition: transform 0.2s, background 0.2s; }
   .thumb-icon:hover { transform: scale(1.12); background: rgba(0,194,168,0.4); }
   .thumb-icon svg { width: 28px; height: 28px; fill: var(--accent); margin-left: 4px; }
-  .thumb-title { font-family: 'Black Han Sans', sans-serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem; }
+  .thumb-title { font-family: 'GmarketSans', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.4rem; }
   .thumb-meta { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
   .btn-newtab { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 11px 22px; border-radius: 8px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
   .btn-newtab:hover { background: rgba(255,255,255,0.22); }
@@ -79,6 +81,10 @@
   .player-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
   .player-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { background: rgba(0,194,168,0.1); color: #007A6A; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(0,194,168,0.2); }
+  .download-area { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .btn-download { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0A2540, #0D3B6E); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; text-decoration: none; }
+  .btn-download:hover { opacity: 0.85; }
+  .btn-download.disabled { background: #ccc; cursor: not-allowed; opacity: 0.6; }
 
   /* 플레이리스트 */
   .playlist { display: flex; flex-direction: column; gap: 10px; }
@@ -101,7 +107,7 @@
   /* 사이드바 */
   .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
   .sidebar-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 1.4rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  .sidebar-card h3 { font-family: 'Black Han Sans', sans-serif; font-size: 0.95rem; color: var(--primary); margin-bottom: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--border); }
+  .sidebar-card h3 { font-family: 'GmarketSans', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--primary); margin-bottom: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--border); }
   .info-list { display: flex; flex-direction: column; gap: 10px; }
   .info-row { display: flex; gap: 10px; align-items: flex-start; }
   .info-icon { width: 32px; height: 32px; background: rgba(0,194,168,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; }
@@ -184,6 +190,7 @@
         <div class="player-tags" id="playerTags">
           <span class="tag">고객 문제</span><span class="tag">기회 발굴</span><span class="tag">문제 정의</span>
         </div>
+        <div class="download-area" id="downloadArea"></div>
       </div>
     </div>
 
@@ -232,7 +239,8 @@ const lectures = [
     desc: "고객이 실제로 겪고 있는 불편함과 문제를 발견하고, 그 안에서 창업 기회를 발굴하는 방법을 배웁니다. 문제 정의부터 기회 탐색까지의 과정을 사례 중심으로 학습합니다.",
     duration: "33분 26초",
     tags: ["고객 문제", "기회 발굴", "문제 정의"],
-    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDHqs1xd9KvOFgieie"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDHqs1xd9KvOFgieie",
+    pdfUrl: ""  // 관리자 페이지에서 업로드 후 자동 반영
   },
   {
     id: 2,
@@ -240,7 +248,8 @@ const lectures = [
     desc: "린 스타트업 방법론을 기반으로 창업 아이템을 빠르게 개발하고 검증하는 과정을 학습합니다. MVP 설계와 반복적인 개선을 통해 시장에 맞는 아이템을 도출합니다.",
     duration: "34분 39초",
     tags: ["린 스타트업", "MVP", "아이템 개발"],
-    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDGX4dUfODnJnAieie"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDGX4dUfODnJnAieie",
+    pdfUrl: ""
   },
   {
     id: 3,
@@ -248,7 +257,8 @@ const lectures = [
     desc: "아이디어와 제품이 실제 고객에게 통하는지 검증하는 방법론을 학습합니다. 고객 인터뷰, 설문, 프로토타입 테스트 등 실전 검증 기법을 통해 시장 적합성을 확인합니다.",
     duration: "38분 47초",
     tags: ["고객 검증", "시장 검증", "인터뷰"],
-    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEvK6nIZPY3dQieie"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEvK6nIZPY3dQieie",
+    pdfUrl: ""
   },
   {
     id: 4,
@@ -256,7 +266,8 @@ const lectures = [
     desc: "지속 가능한 창업을 위한 수익구조 설계와 비즈니스 모델 수립 방법을 학습합니다. 비즈니스 모델 캔버스를 활용해 수익 창출 구조를 구체적으로 설계합니다.",
     duration: "44분 05초",
     tags: ["수익구조", "비즈니스 모델", "BMC"],
-    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEGyCtdDv9Z2Aieie"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDEGyCtdDv9Z2Aieie",
+    pdfUrl: ""
   },
   {
     id: 5,
@@ -264,11 +275,16 @@ const lectures = [
     desc: "정부 및 기관의 창업지원사업에 효과적으로 참여하는 방법과 지원 과정에서 갖춰야 할 매너를 학습합니다. 신청서 작성 요령, 발표 준비, 심사 대응 등 실전 노하우를 익힙니다.",
     duration: "42분 47초",
     tags: ["창업지원사업", "신청서 작성", "IR 매너"],
-    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDFFkBG7PJ1UVgieie"
+    videoUrl: "https://play.wecandeo.com/video/v/?key=BOKNS9AQWrFQgk9zLFkxWRsN1ZaB9TxKzf2u71LPKDFFkBG7PJ1UVgieie",
+    pdfUrl: ""
   }
 ];
 
 let current = 0;
+
+function getPdfUrls() {
+  try { return JSON.parse(localStorage.getItem('lecturePdfs') || '{}'); } catch(e) { return {}; }
+}
 
 function getViews() {
   try { return JSON.parse(localStorage.getItem('lectureViews') || '{}'); } catch(e) { return {}; }
@@ -277,6 +293,17 @@ function addView(id) {
   const v = getViews();
   v[id] = (v[id] || 0) + 1;
   localStorage.setItem('lectureViews', JSON.stringify(v));
+}
+
+function renderDownloadBtn(lec) {
+  const pdfs = getPdfUrls();
+  const url = pdfs[lec.id] || lec.pdfUrl;
+  const area = document.getElementById('downloadArea');
+  if (url) {
+    area.innerHTML = '<a class="btn-download" href="' + url + '" target="_blank" download>📄 강의안 다운로드</a>';
+  } else {
+    area.innerHTML = '<button class="btn-download disabled" disabled>📄 강의안 준비 중</button>';
+  }
 }
 
 function playEmbed() {
@@ -297,18 +324,17 @@ function openNewTab() {
 function selectLecture(i) {
   current = i;
   const lec = lectures[i];
-  // 썸네일 초기화
   document.getElementById('playerThumb').className = 'player-thumb';
   const iframe = document.getElementById('videoIframe');
   iframe.className = 'video-iframe';
   iframe.src = '';
-  // 정보 업데이트
   document.getElementById('thumbTitle').textContent = lec.title;
   document.getElementById('thumbMeta').textContent = '강의 ' + (i+1) + ' · ' + lec.duration;
   document.getElementById('playerEpisode').textContent = 'EPISODE ' + String(i+1).padStart(2,'0');
   document.getElementById('playerTitle').textContent = lec.title;
   document.getElementById('playerDesc').textContent = lec.desc;
   document.getElementById('playerTags').innerHTML = lec.tags.map(t => '<span class="tag">'+t+'</span>').join('');
+  renderDownloadBtn(lec);
   renderPlaylist();
 }
 
@@ -331,6 +357,7 @@ function renderPlaylist() {
 }
 
 renderPlaylist();
+renderDownloadBtn(lectures[0]);
 </script>
 </body>
 </html>
