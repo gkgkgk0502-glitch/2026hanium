@@ -6,106 +6,102 @@
 <title>관리자 페이지 | 한이음 드림업 창업 멘토링</title>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Black+Han+Sans&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --primary: #0A2540;
-    --accent: #00C2A8;
-    --gold: #F5B623;
-    --red: #FF4D4D;
-    --light: #F0F4F8;
-    --white: #FFFFFF;
-    --text: #1A1A2E;
-    --muted: #607080;
-    --border: #E0E8F0;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Nanum Gothic', sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+  :root { --primary:#0A2540; --accent:#00C2A8; --gold:#F5B623; --red:#FF4D4D; --light:#F0F4F8; --white:#FFFFFF; --text:#1A1A2E; --muted:#607080; --border:#E0E8F0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Nanum Gothic',sans-serif; background:var(--light); color:var(--text); min-height:100vh; }
 
   /* LOGIN */
-  .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--primary) 0%, #0D3B6E 100%); }
-  .login-card { background: white; border-radius: 20px; padding: 2.5rem; width: 100%; max-width: 380px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-  .login-logo { font-family: 'Black Han Sans', sans-serif; font-size: 1rem; color: var(--primary); margin-bottom: 0.3rem; }
-  .login-sub { font-size: 0.75rem; color: var(--muted); margin-bottom: 2rem; }
-  .login-title { font-family: 'Black Han Sans', sans-serif; font-size: 1.4rem; color: var(--primary); margin-bottom: 1.5rem; }
-  .form-group { margin-bottom: 1rem; }
-  .form-group label { font-size: 0.78rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; display: block; margin-bottom: 6px; }
-  .form-group input { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
-  .form-group input:focus { border-color: var(--accent); }
-  .login-btn { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--accent), #00A08A); color: white; border: none; border-radius: 10px; font-family: 'Black Han Sans', sans-serif; font-size: 1rem; cursor: pointer; margin-top: 0.5rem; transition: opacity 0.2s; }
-  .login-btn:hover { opacity: 0.9; }
-  .login-error { color: var(--red); font-size: 0.78rem; margin-top: 0.8rem; text-align: center; display: none; }
+  .login-wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--primary) 0%,#0D3B6E 100%); }
+  .login-card { background:white; border-radius:20px; padding:2.5rem; width:100%; max-width:380px; box-shadow:0 20px 60px rgba(0,0,0,0.3); }
+  .login-logo { font-family:'Black Han Sans',sans-serif; font-size:1rem; color:var(--primary); margin-bottom:0.3rem; }
+  .login-sub { font-size:0.75rem; color:var(--muted); margin-bottom:2rem; }
+  .login-title { font-family:'Black Han Sans',sans-serif; font-size:1.4rem; color:var(--primary); margin-bottom:1.5rem; }
+  .form-group { margin-bottom:1rem; }
+  .form-group label { font-size:0.78rem; font-weight:700; color:var(--muted); display:block; margin-bottom:6px; }
+  .form-group input { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:10px; font-family:'Nanum Gothic',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s; }
+  .form-group input:focus { border-color:var(--accent); }
+  .login-btn { width:100%; padding:13px; background:linear-gradient(135deg,var(--accent),#00A08A); color:white; border:none; border-radius:10px; font-family:'Black Han Sans',sans-serif; font-size:1rem; cursor:pointer; margin-top:0.5rem; }
+  .login-error { color:var(--red); font-size:0.78rem; margin-top:0.8rem; text-align:center; display:none; }
 
-  /* ADMIN LAYOUT */
-  .admin-wrap { display: none; }
-  header { background: var(--primary); padding: 0 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-  .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .logo-area { display: flex; flex-direction: column; }
-  .logo-main { font-family: 'Black Han Sans', sans-serif; font-size: 1.05rem; color: var(--accent); }
-  .logo-sub { font-size: 0.6rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
-  .admin-badge { background: var(--red); color: white; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
-  .logout-btn { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 8px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.78rem; cursor: pointer; transition: all 0.2s; }
-  .logout-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+  /* ADMIN */
+  .admin-wrap { display:none; }
+  header { background:var(--primary); padding:0 2rem; position:sticky; top:0; z-index:100; box-shadow:0 2px 20px rgba(0,0,0,0.3); }
+  .header-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .logo-main { font-family:'Black Han Sans',sans-serif; font-size:1.05rem; color:var(--accent); }
+  .logo-sub { font-size:0.6rem; color:rgba(255,255,255,0.5); margin-top:2px; }
+  .admin-badge { background:var(--red); color:white; font-size:0.68rem; font-weight:700; padding:3px 10px; border-radius:20px; }
+  .logout-btn { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.2); padding:6px 14px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.78rem; cursor:pointer; }
+  .logout-btn:hover { background:rgba(255,255,255,0.2); color:white; }
 
-  .admin-content { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+  .admin-content { max-width:1200px; margin:0 auto; padding:2rem; }
+  .page-title { font-family:'Black Han Sans',sans-serif; font-size:1.4rem; color:var(--primary); margin-bottom:1.5rem; }
 
-  /* SUMMARY CARDS */
-  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
-  .summary-card { background: white; border-radius: 14px; padding: 1.4rem; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-  .summary-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
-  .summary-num { font-family: 'Black Han Sans', sans-serif; font-size: 2rem; color: var(--primary); line-height: 1; margin-bottom: 0.3rem; }
-  .summary-num.accent { color: var(--accent); }
-  .summary-num.gold { color: var(--gold); }
-  .summary-label { font-size: 0.75rem; color: var(--muted); }
+  /* SUMMARY */
+  .summary-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-bottom:2rem; }
+  .summary-card { background:white; border-radius:14px; padding:1.4rem; border:1px solid var(--border); box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+  .summary-icon { font-size:1.6rem; margin-bottom:0.6rem; }
+  .summary-num { font-family:'Black Han Sans',sans-serif; font-size:2rem; color:var(--primary); line-height:1; margin-bottom:0.3rem; }
+  .summary-num.accent { color:var(--accent); }
+  .summary-num.gold { color:var(--gold); }
+  .summary-label { font-size:0.75rem; color:var(--muted); }
 
-  /* TABLE */
-  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-  .section-header h2 { font-family: 'Black Han Sans', sans-serif; font-size: 1.2rem; color: var(--primary); }
-  .refresh-btn { background: var(--accent); color: white; border: none; padding: 7px 16px; border-radius: 8px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
-  .refresh-btn:hover { opacity: 0.85; }
-  .reset-btn { background: rgba(255,77,77,0.1); color: var(--red); border: 1px solid rgba(255,77,77,0.3); padding: 7px 16px; border-radius: 8px; font-family: 'Nanum Gothic', sans-serif; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-  .reset-btn:hover { background: var(--red); color: white; }
-  .btn-group { display: flex; gap: 8px; }
+  /* TABS */
+  .tab-btns { display:flex; gap:8px; margin-bottom:1.5rem; }
+  .tab-btn { padding:9px 20px; border-radius:8px; border:1.5px solid var(--border); background:white; font-family:'Nanum Gothic',sans-serif; font-size:0.85rem; font-weight:700; cursor:pointer; color:var(--muted); transition:all 0.2s; }
+  .tab-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
 
-  .table-card { background: white; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 2rem; }
-  table { width: 100%; border-collapse: collapse; }
-  thead { background: var(--primary); }
-  thead th { color: rgba(255,255,255,0.8); font-size: 0.75rem; font-weight: 700; padding: 14px 20px; text-align: left; letter-spacing: 0.05em; }
-  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
-  tbody tr:last-child { border-bottom: none; }
-  tbody tr:hover { background: rgba(0,194,168,0.03); }
-  tbody td { padding: 16px 20px; font-size: 0.85rem; color: var(--text); vertical-align: middle; }
-  .ep-badge { display: inline-block; background: var(--primary); color: white; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 8px; }
-  .view-bar-wrap { display: flex; align-items: center; gap: 10px; }
-  .view-bar-track { flex: 1; height: 6px; background: var(--light); border-radius: 6px; overflow: hidden; min-width: 80px; }
-  .view-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #00A08A); border-radius: 6px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
-  .view-count { font-family: 'Black Han Sans', sans-serif; font-size: 1.1rem; color: var(--primary); min-width: 40px; text-align: right; }
-  .view-unit { font-size: 0.72rem; color: var(--muted); }
-  .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; font-size: 0.78rem; font-weight: 700; }
-  .rank-1 { background: #FFD700; color: #7A5A00; }
-  .rank-2 { background: #C0C0C0; color: #555; }
-  .rank-3 { background: #CD7F32; color: #5A3010; }
-  .rank-other { background: var(--light); color: var(--muted); }
+  /* VIEWS TABLE */
+  .table-card { background:white; border-radius:16px; border:1px solid var(--border); box-shadow:0 2px 12px rgba(0,0,0,0.05); overflow:hidden; margin-bottom:2rem; }
+  .table-header { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 1.5rem; border-bottom:1px solid var(--border); }
+  .table-header h2 { font-family:'Black Han Sans',sans-serif; font-size:1rem; color:var(--primary); }
+  .btn-group { display:flex; gap:8px; }
+  .refresh-btn { background:var(--accent); color:white; border:none; padding:7px 14px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.78rem; font-weight:700; cursor:pointer; }
+  .reset-btn { background:rgba(255,77,77,0.1); color:var(--red); border:1px solid rgba(255,77,77,0.3); padding:7px 14px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.78rem; font-weight:700; cursor:pointer; }
+  .reset-btn:hover { background:var(--red); color:white; }
+  table { width:100%; border-collapse:collapse; }
+  thead { background:var(--primary); }
+  thead th { color:rgba(255,255,255,0.8); font-size:0.75rem; font-weight:700; padding:12px 20px; text-align:left; }
+  tbody tr { border-bottom:1px solid var(--border); }
+  tbody tr:last-child { border-bottom:none; }
+  tbody tr:hover { background:rgba(0,194,168,0.03); }
+  tbody td { padding:14px 20px; font-size:0.85rem; }
+  .ep-badge { display:inline-block; background:var(--primary); color:white; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-right:8px; }
+  .view-bar-wrap { display:flex; align-items:center; gap:10px; }
+  .view-bar-track { flex:1; height:6px; background:var(--light); border-radius:6px; overflow:hidden; min-width:80px; }
+  .view-bar-fill { height:100%; background:linear-gradient(90deg,var(--accent),#00A08A); border-radius:6px; }
+  .view-count { font-family:'Black Han Sans',sans-serif; font-size:1.1rem; color:var(--primary); min-width:36px; text-align:right; }
+  .rank-badge { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; font-size:0.78rem; font-weight:700; }
+  .rank-1 { background:#FFD700; color:#7A5A00; }
+  .rank-2 { background:#C0C0C0; color:#555; }
+  .rank-3 { background:#CD7F32; color:#5A3010; }
+  .rank-other { background:var(--light); color:var(--muted); }
 
-  /* CHART */
-  .chart-card { background: white; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05); padding: 1.5rem; margin-bottom: 2rem; }
-  .chart-title { font-family: 'Black Han Sans', sans-serif; font-size: 1rem; color: var(--primary); margin-bottom: 1.2rem; }
-  .bar-chart { display: flex; flex-direction: column; gap: 14px; }
-  .bar-row { display: flex; align-items: center; gap: 12px; }
-  .bar-label { font-size: 0.78rem; color: var(--muted); width: 200px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .bar-outer { flex: 1; height: 28px; background: var(--light); border-radius: 8px; overflow: hidden; }
-  .bar-inner { height: 100%; border-radius: 8px; display: flex; align-items: center; padding-left: 10px; transition: width 1s cubic-bezier(0.4,0,0.2,1); min-width: 0; }
-  .bar-val { font-size: 0.78rem; font-weight: 700; color: white; white-space: nowrap; }
-  .bar-colors { --c0: #00C2A8; --c1: #0D8FC4; --c2: #6C63FF; --c3: #F5B623; --c4: #FF6B35; }
+  /* PDF UPLOAD */
+  .pdf-grid { display:flex; flex-direction:column; gap:12px; }
+  .pdf-row { background:white; border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+  .pdf-ep { font-family:'Black Han Sans',sans-serif; font-size:0.85rem; color:var(--primary); min-width:36px; }
+  .pdf-title { flex:1; font-size:0.88rem; font-weight:700; color:var(--text); min-width:160px; }
+  .pdf-status { font-size:0.78rem; padding:4px 12px; border-radius:20px; font-weight:700; white-space:nowrap; }
+  .pdf-status.uploaded { background:rgba(0,194,168,0.12); color:#007A6A; }
+  .pdf-status.empty { background:rgba(255,77,77,0.1); color:var(--red); }
+  .pdf-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .input-url { padding:8px 12px; border:1.5px solid var(--border); border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.82rem; width:280px; outline:none; transition:border-color 0.2s; }
+  .input-url:focus { border-color:var(--accent); }
+  .btn-save { background:var(--accent); color:white; border:none; padding:8px 16px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.82rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+  .btn-save:hover { opacity:0.85; }
+  .btn-clear { background:rgba(255,77,77,0.1); color:var(--red); border:1px solid rgba(255,77,77,0.3); padding:8px 12px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.82rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+  .btn-clear:hover { background:var(--red); color:white; }
+  .btn-preview { background:var(--light); color:var(--primary); border:1px solid var(--border); padding:8px 12px; border-radius:8px; font-family:'Nanum Gothic',sans-serif; font-size:0.82rem; font-weight:700; cursor:pointer; text-decoration:none; white-space:nowrap; display:inline-block; }
 
-  .last-updated { font-size: 0.72rem; color: var(--muted); text-align: right; margin-top: 0.5rem; }
+  .hint { font-size:0.75rem; color:var(--muted); margin-top:0.5rem; line-height:1.5; }
 
-  .empty-state { text-align: center; padding: 3rem; color: var(--muted); }
-  .empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-  .empty-state p { font-size: 0.85rem; }
+  .toast { position:fixed; bottom:2rem; right:2rem; background:var(--primary); border:1px solid var(--accent); color:white; padding:12px 20px; border-radius:10px; font-size:0.82rem; font-weight:500; box-shadow:0 8px 24px rgba(0,0,0,0.2); transform:translateY(100px); opacity:0; transition:all 0.3s; z-index:200; }
+  .toast.show { transform:translateY(0); opacity:1; }
 
-  footer { background: var(--primary); color: rgba(255,255,255,0.4); padding: 1.5rem 2rem; text-align: center; font-size: 0.72rem; }
-  footer strong { color: rgba(255,255,255,0.65); }
-
-  @media (max-width: 768px) { .summary-grid { grid-template-columns: repeat(2, 1fr); } .bar-label { width: 120px; } }
+  .last-updated { font-size:0.72rem; color:var(--muted); text-align:right; margin-top:0.5rem; }
+  footer { background:var(--primary); color:rgba(255,255,255,0.4); padding:1.5rem 2rem; text-align:center; font-size:0.72rem; margin-top:2rem; }
+  footer strong { color:rgba(255,255,255,0.65); }
+  @media(max-width:768px) { .summary-grid{grid-template-columns:repeat(2,1fr);} .input-url{width:100%;} }
 </style>
 </head>
 <body>
@@ -133,9 +129,9 @@
 <div class="admin-wrap" id="adminWrap">
   <header>
     <div class="header-inner">
-      <div class="logo-area">
-        <span class="logo-main">한이음 드림업 창업 멘토링</span>
-        <span class="logo-sub">한국정보산업연합회 · 관리자 페이지</span>
+      <div>
+        <div class="logo-main">한이음 드림업 창업 멘토링</div>
+        <div class="logo-sub">한국정보산업연합회 · 관리자 페이지</div>
       </div>
       <span class="admin-badge">🔒 ADMIN</span>
       <button class="logout-btn" onclick="doLogout()">로그아웃</button>
@@ -143,9 +139,10 @@
   </header>
 
   <div class="admin-content">
+    <div class="page-title">📊 대시보드</div>
 
     <!-- SUMMARY -->
-    <div class="summary-grid" id="summaryGrid">
+    <div class="summary-grid">
       <div class="summary-card">
         <div class="summary-icon">📹</div>
         <div class="summary-num">5</div>
@@ -162,41 +159,52 @@
         <div class="summary-label">최다 조회 강의</div>
       </div>
       <div class="summary-card">
-        <div class="summary-icon">📊</div>
-        <div class="summary-num accent" id="avgViews">0</div>
-        <div class="summary-label">강의 평균 조회수</div>
+        <div class="summary-icon">📄</div>
+        <div class="summary-num accent" id="pdfCount">0</div>
+        <div class="summary-label">강의안 등록 수</div>
       </div>
     </div>
 
-    <!-- BAR CHART -->
-    <div class="chart-card bar-colors">
-      <div class="chart-title">📈 강의별 조회수 현황</div>
-      <div class="bar-chart" id="barChart"></div>
+    <!-- TABS -->
+    <div class="tab-btns">
+      <button class="tab-btn active" onclick="showTab('views',this)">📈 조회수 현황</button>
+      <button class="tab-btn" onclick="showTab('pdf',this)">📄 강의안 관리</button>
     </div>
 
-    <!-- TABLE -->
-    <div class="section-header">
-      <h2>📋 강의별 상세 조회수</h2>
-      <div class="btn-group">
-        <button class="refresh-btn" onclick="refreshData()">↻ 새로고침</button>
-        <button class="reset-btn" onclick="resetData()">초기화</button>
+    <!-- 조회수 탭 -->
+    <div id="tab-views">
+      <div class="table-card">
+        <div class="table-header">
+          <h2>강의별 조회수</h2>
+          <div class="btn-group">
+            <button class="refresh-btn" onclick="renderAll()">↻ 새로고침</button>
+            <button class="reset-btn" onclick="resetViews()">초기화</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr><th>순위</th><th>강의</th><th>시간</th><th>조회수</th></tr>
+          </thead>
+          <tbody id="viewTable"></tbody>
+        </table>
       </div>
-    </div>
-    <div class="table-card">
-      <table>
-        <thead>
-          <tr>
-            <th>순위</th>
-            <th>강의</th>
-            <th>시간</th>
-            <th>조회수</th>
-          </tr>
-        </thead>
-        <tbody id="viewTable"></tbody>
-      </table>
+      <div class="last-updated" id="lastUpdated"></div>
     </div>
 
-    <div class="last-updated" id="lastUpdated"></div>
+    <!-- 강의안 탭 -->
+    <div id="tab-pdf" style="display:none;">
+      <div class="table-card">
+        <div class="table-header">
+          <h2>강의안 PDF 관리</h2>
+        </div>
+        <div style="padding:1.2rem 1.5rem;">
+          <p class="hint">📌 Google Drive 또는 다른 저장소에 PDF를 올린 후 공유 링크를 입력하세요.<br>
+          Google Drive: 파일 우클릭 → 공유 → 링크 있는 모든 사용자 → 링크 복사</p>
+        </div>
+      </div>
+      <div class="pdf-grid" id="pdfGrid"></div>
+    </div>
+
   </div>
 
   <footer>
@@ -205,24 +213,25 @@
   </footer>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
-// ── 관리자 계정 설정 (필요시 변경) ──
 const ADMIN_ID = 'admin';
 const ADMIN_PW = 'hanium2026';
 
 const lectures = [
-  { id: 1, title: "고객 문제 발견과 창업 기회 발굴",    duration: "37분" },
-  { id: 2, title: "린 스타트업 기반 창업 아이템 개발",  duration: "42분" },
-  { id: 3, title: "고객(시장) 검증 방법론",             duration: "38분" },
-  { id: 4, title: "수익구조 및 비즈니스 모델 설계",     duration: "35분" },
-  { id: 5, title: "창업지원사업 참여 방법과 매너",      duration: "38분" }
+  { id:1, title:"고객 문제 발견과 창업 기회 발굴",   duration:"33분 26초" },
+  { id:2, title:"린 스타트업 기반 창업 아이템 개발", duration:"34분 39초" },
+  { id:3, title:"고객(시장) 검증 방법론",            duration:"38분 47초" },
+  { id:4, title:"수익구조 및 비즈니스 모델 설계",    duration:"44분 05초" },
+  { id:5, title:"창업지원사업 참여 방법과 매너",     duration:"42분 47초" }
 ];
 
 const barColors = ['#00C2A8','#0D8FC4','#6C63FF','#F5B623','#FF6B35'];
 
-function getViews() {
-  try { return JSON.parse(localStorage.getItem('lectureViews') || '{}'); } catch(e) { return {}; }
-}
+function getViews() { try { return JSON.parse(localStorage.getItem('lectureViews')||'{}'); } catch(e) { return {}; } }
+function getPdfs()  { try { return JSON.parse(localStorage.getItem('lecturePdfs') ||'{}'); } catch(e) { return {}; } }
+function savePdfs(obj) { localStorage.setItem('lecturePdfs', JSON.stringify(obj)); }
 
 function doLogin() {
   const id = document.getElementById('loginId').value.trim();
@@ -231,6 +240,7 @@ function doLogin() {
     document.getElementById('loginWrap').style.display = 'none';
     document.getElementById('adminWrap').style.display = 'block';
     renderAll();
+    renderPdfGrid();
   } else {
     document.getElementById('loginError').style.display = 'block';
   }
@@ -243,77 +253,100 @@ function doLogout() {
   document.getElementById('loginPw').value = '';
 }
 
+function showTab(name, btn) {
+  document.getElementById('tab-views').style.display = name === 'views' ? 'block' : 'none';
+  document.getElementById('tab-pdf').style.display   = name === 'pdf'   ? 'block' : 'none';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
 function renderAll() {
   const views = getViews();
-  const viewArr = lectures.map(l => ({ ...l, views: views[l.id] || 0 }));
-  const total = viewArr.reduce((s, l) => s + l.views, 0);
-  const avg = total > 0 ? Math.round(total / lectures.length) : 0;
-  const top = viewArr.reduce((a, b) => a.views >= b.views ? a : b);
-  const maxViews = Math.max(...viewArr.map(l => l.views), 1);
+  const pdfs  = getPdfs();
+  const arr = lectures.map(l => ({ ...l, views: views[l.id]||0 }));
+  const total = arr.reduce((s,l) => s+l.views, 0);
+  const top   = arr.reduce((a,b) => a.views>=b.views ? a : b);
+  const pdfCnt = Object.values(pdfs).filter(v => v).length;
+  const maxV  = Math.max(...arr.map(l=>l.views), 1);
 
-  // Summary
   document.getElementById('totalViews').textContent = total.toLocaleString();
-  document.getElementById('topLecture').textContent = total > 0 ? `${top.id}강` : '-';
-  document.getElementById('avgViews').textContent = avg.toLocaleString();
+  document.getElementById('topLecture').textContent = total > 0 ? top.id+'강' : '-';
+  document.getElementById('pdfCount').textContent   = pdfCnt;
 
-  // Bar Chart
-  const bc = document.getElementById('barChart');
-  bc.innerHTML = '';
-  if (total === 0) {
-    bc.innerHTML = '<div class="empty-state"><div class="empty-icon">📭</div><p>아직 재생 데이터가 없습니다.<br>강의 페이지에서 영상을 재생하면 조회수가 집계됩니다.</p></div>';
-  } else {
-    viewArr.forEach((lec, i) => {
-      const pct = Math.round((lec.views / maxViews) * 100);
-      bc.innerHTML += `
-        <div class="bar-row">
-          <div class="bar-label">${i+1}강 ${lec.title}</div>
-          <div class="bar-outer">
-            <div class="bar-inner" style="width:${pct}%; background:${barColors[i]}">
-              ${lec.views > 0 ? `<span class="bar-val">${lec.views}회</span>` : ''}
-            </div>
-          </div>
-        </div>`;
-    });
-  }
+  const sorted = [...arr].sort((a,b) => b.views-a.views);
+  const rankCls = i => ['rank-1','rank-2','rank-3','rank-other','rank-other'][i];
+  const rankEmoji = i => ['🥇','🥈','🥉','',''][i];
 
-  // Table (정렬: 조회수 높은 순)
-  const sorted = [...viewArr].sort((a, b) => b.views - a.views);
-  const rankClass = (i) => ['rank-1','rank-2','rank-3','rank-other','rank-other'][i];
-  const rankEmoji = (i) => ['🥇','🥈','🥉','',''][i];
+  document.getElementById('viewTable').innerHTML = sorted.map((lec,i) => {
+    const pct = Math.round(lec.views/maxV*100);
+    return '<tr>' +
+      '<td><span class="rank-badge '+rankCls(i)+'">'+(rankEmoji(i)||(i+1))+'</span></td>' +
+      '<td><span class="ep-badge">'+lec.id+'강</span>'+lec.title+'</td>' +
+      '<td>'+lec.duration+'</td>' +
+      '<td><div class="view-bar-wrap">' +
+        '<div class="view-bar-track"><div class="view-bar-fill" style="width:'+pct+'%;background:'+barColors[lec.id-1]+'"></div></div>' +
+        '<span class="view-count">'+lec.views.toLocaleString()+'</span><span style="font-size:0.72rem;color:var(--muted)">회</span>' +
+      '</div></td>' +
+    '</tr>';
+  }).join('');
 
-  const tbody = document.getElementById('viewTable');
-  if (total === 0) {
-    tbody.innerHTML = `<tr><td colspan="4"><div class="empty-state"><div class="empty-icon">📭</div><p>아직 재생 데이터가 없습니다.</p></div></td></tr>`;
-  } else {
-    tbody.innerHTML = sorted.map((lec, i) => {
-      const pct = Math.round((lec.views / maxViews) * 100);
-      return `<tr>
-        <td><span class="rank-badge ${rankClass(i)}">${rankEmoji(i) || (i+1)}</span></td>
-        <td><span class="ep-badge">${lec.id}강</span>${lec.title}</td>
-        <td>${lec.duration}</td>
-        <td>
-          <div class="view-bar-wrap">
-            <div class="view-bar-track"><div class="view-bar-fill" style="width:${pct}%; background:${barColors[lec.id-1]}"></div></div>
-            <span class="view-count">${lec.views.toLocaleString()}</span>
-            <span class="view-unit">회</span>
-          </div>
-        </td>
-      </tr>`;
-    }).join('');
-  }
-
-  document.getElementById('lastUpdated').textContent = `마지막 업데이트: ${new Date().toLocaleString('ko-KR')}`;
+  document.getElementById('lastUpdated').textContent = '마지막 업데이트: ' + new Date().toLocaleString('ko-KR');
 }
 
-function refreshData() {
-  renderAll();
-}
-
-function resetData() {
-  if (confirm('모든 조회수 데이터를 초기화하시겠습니까?\n이 작업은 되돌릴 수 없습니다.')) {
+function resetViews() {
+  if (confirm('모든 조회수를 초기화하시겠습니까?')) {
     localStorage.removeItem('lectureViews');
     renderAll();
+    showToast('✅ 조회수가 초기화되었습니다.');
   }
+}
+
+function renderPdfGrid() {
+  const pdfs = getPdfs();
+  const grid = document.getElementById('pdfGrid');
+  grid.innerHTML = lectures.map(lec => {
+    const url = pdfs[lec.id] || '';
+    const hasFile = !!url;
+    return '<div class="pdf-row" id="pdf-row-'+lec.id+'">' +
+      '<div class="pdf-ep">'+lec.id+'강</div>' +
+      '<div class="pdf-title">'+lec.title+'</div>' +
+      '<span class="pdf-status '+(hasFile?'uploaded':'empty')+'">'+(hasFile?'✅ 등록됨':'❌ 미등록')+'</span>' +
+      '<div class="pdf-actions">' +
+        '<input class="input-url" id="pdf-input-'+lec.id+'" type="text" placeholder="PDF 링크 입력 (Google Drive 공유 링크 등)" value="'+url+'">' +
+        '<button class="btn-save" onclick="savePdf('+lec.id+')">저장</button>' +
+        (hasFile ? '<a class="btn-preview" href="'+url+'" target="_blank">미리보기</a>' : '') +
+        (hasFile ? '<button class="btn-clear" onclick="clearPdf('+lec.id+')">삭제</button>' : '') +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function savePdf(id) {
+  const url = document.getElementById('pdf-input-'+id).value.trim();
+  if (!url) { showToast('⚠️ 링크를 입력해주세요.'); return; }
+  const pdfs = getPdfs();
+  pdfs[id] = url;
+  savePdfs(pdfs);
+  renderPdfGrid();
+  renderAll();
+  showToast('✅ '+id+'강 강의안이 저장되었습니다!');
+}
+
+function clearPdf(id) {
+  if (!confirm(id+'강 강의안 링크를 삭제하시겠습니까?')) return;
+  const pdfs = getPdfs();
+  delete pdfs[id];
+  savePdfs(pdfs);
+  renderPdfGrid();
+  renderAll();
+  showToast('🗑️ '+id+'강 강의안이 삭제되었습니다.');
 }
 </script>
 </body>
