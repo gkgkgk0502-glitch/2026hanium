@@ -295,12 +295,23 @@ function addView(id) {
   localStorage.setItem('lectureViews', JSON.stringify(v));
 }
 
+function toDownloadUrl(url) {
+  // Google Drive 공유 링크 → 직접 다운로드 링크로 변환
+  // https://drive.google.com/file/d/FILEID/view → https://drive.google.com/uc?export=download&id=FILEID
+  const match = url.match(/\/file\/d\/([^/]+)/);
+  if (match) {
+    return 'https://drive.google.com/uc?export=download&id=' + match[1];
+  }
+  return url; // Google Drive 외 링크는 그대로 사용
+}
+
 function renderDownloadBtn(lec) {
   const pdfs = getPdfUrls();
-  const url = pdfs[lec.id] || lec.pdfUrl;
+  const rawUrl = pdfs[lec.id] || lec.pdfUrl;
   const area = document.getElementById('downloadArea');
-  if (url) {
-    area.innerHTML = '<a class="btn-download" href="' + url + '" target="_blank" download>📄 강의안 다운로드</a>';
+  if (rawUrl) {
+    const dlUrl = toDownloadUrl(rawUrl);
+    area.innerHTML = '<a class="btn-download" href="' + dlUrl + '" download>📄 강의안 다운로드</a>';
   } else {
     area.innerHTML = '<button class="btn-download disabled" disabled>📄 강의안 준비 중</button>';
   }
